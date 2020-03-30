@@ -29,6 +29,17 @@ if (UserWord === ReversedWord) {
 // Sommiamo i due numeri e dichiariamo chi ha vinto.
 
 // creazione di una funziona che sceglie automaticamente un numero da 1 a 5
+function ScegliPariDispari() {
+  var pari = 1;
+  var dispari = 0;
+  var pariodispari = Math.floor(Math.random() * 2);
+  console.log(pariodispari);
+  if (pariodispari === pari) {
+    return "Pari"
+  } else {
+    return "Dispari"
+  }
+}
 
 // creazione di una funziona che sceglei automanticamen pari o dispari
 
