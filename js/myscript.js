@@ -17,10 +17,10 @@ var ReversedWord = ReverseMyWord(UserWord);
 
 // Confronto la parola iniziale con il suo contrario
 if (UserWord === ReversedWord) {
-  document.getElementById('palindromi').innerHTML = "La parola è un palindromo"; // Fornisco l'esito del confronto positivo
+  document.getElementById('palindromi').innerHTML = "La parola " + UserWord + " è un palindromo"; // Fornisco l'esito del confronto positivo
 
 } else {
-  document.getElementById('palindromi').innerHTML = "La parola NON è un palindromo" // Fornisco l'esito del confronto negativo
+  document.getElementById('palindromi').innerHTML = "La parola " + UserWord + " NON è un palindromo" // Fornisco l'esito del confronto negativo
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Creo gioco pari o dispari;
@@ -45,13 +45,40 @@ function ScegliNumero1a5() {
   var risultato = Math.floor(Math.random() * (6 - 1) + 1);
   return risultato;
 }
-console.log(ScegliNumero1a5());
 // il giocatore 1 (pc) sceglie pari o dispari. Salvo la risposta
+var SceltaGiocatoreUno = ScegliPariDispari();
+console.log("Scelta giocatore 1: " + SceltaGiocatoreUno);
 
 // inoltre sceglie un numero da 1 a 5. Lo salvo
+var SceltaNumeroGiocatoreUno = ScegliNumero1a5();
+console.log("Scelta NUMERO giocatore 1: " + SceltaNumeroGiocatoreUno);
+console.log("------------------------------------------");
 
 // il giocatore 2 (pc) sceglie pari o dispari. Salvo la risposta
+var SceltaGiocatoreDue = ScegliPariDispari();
+console.log("Scelta giocatore 2: " + SceltaGiocatoreDue);
 
 // inoltre sceglie un numero da 1 a 5. Lo salvo
+var SceltaNumeroGiocatoreDue = ScegliNumero1a5();
+console.log("Scelta NUMERO giocatore 2: " + SceltaNumeroGiocatoreDue);
+console.log("------------------------------------------");
 
 // Sommiamo i due numeri e dichiariamo chi ha vinto
+var SommaFinale = SceltaNumeroGiocatoreDue + SceltaNumeroGiocatoreUno;
+console.log("La somma finale è: " + SommaFinale);
+console.log("------------------------------------------");
+// Decretiamo se il numero vincitore è pari o dispari
+if (SommaFinale % 2 == 0) {
+  var VittoriaPari = "Pari";
+  document.getElementById('paridispariesito').innerHTML = "Pari Vince";
+} else {
+  var VittoriaDispari = "Dispari";
+  document.getElementById('paridispariesito').innerHTML = "Dispari Vince";
+}
+// decretiamo il vincitore
+if (SceltaGiocatoreUno == VittoriaPari || SceltaGiocatoreUno == VittoriaDispari) {
+  document.getElementById('paridisparig1').innerHTML = "Giocatore 1 Vince"
+}
+if (SceltaGiocatoreDue == VittoriaPari || SceltaGiocatoreDue == VittoriaDispari) {
+  document.getElementById('paridisparig2').innerHTML = "Giocatore 2 Vince"
+}
