@@ -28,7 +28,7 @@ if (UserWord === ReversedWord) {
 // Generiamo un numero random (sempre da 1 a 5) per il computer.
 // Sommiamo i due numeri e dichiariamo chi ha vinto.
 
-// creazione di una funziona che sceglie automaticamente un numero da 1 a 5
+// creazione di una funziona che sceglie automaticamente tra pari e disp
 function ScegliPariDispari() {
   var pari = 1;
   var dispari = 0;
@@ -40,9 +40,12 @@ function ScegliPariDispari() {
     return "Dispari"
   }
 }
-
-// creazione di una funziona che sceglei automanticamen pari o dispari
-
+// creazione di una funziona che sceglie automanticamen un numero da 1 a 5
+function ScegliNumero1a5() {
+  var risultato = Math.floor(Math.random() * (6 - 1) + 1);
+  return risultato;
+}
+console.log(ScegliNumero1a5());
 // il giocatore 1 (pc) sceglie pari o dispari. Salvo la risposta
 
 // inoltre sceglie un numero da 1 a 5. Lo salvo
