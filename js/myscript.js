@@ -7,14 +7,18 @@
 var UserWord = prompt("Inserisci la parola");
 // Ripesco la parola suddetta e ne ricavo il suo contrario
 // Creo una funziona che faccia questo:
-function ReverseWord() {
-  var SplittedWord = UserWord.split();;     //divido la parola in tutte le sue lettere
+function ReverseMyWord(str) {
+  var SplittedWord = str.split("");     //divido la parola in tutte le sue lettere
   var RevertedWord = SplittedWord.reverse();//Inverto l'ordine delle singole lettere
-  var JoinedWord = RevertedWord.join();     //Unifico le lettere per formare la parola
+  var JoinedWord = RevertedWord.join("");     //Unifico le lettere per formare la parola
   return JoinedWord;
 }
-console.log(JoinedWord);
+var ReversedWord = ReverseMyWord(UserWord);
+
 // Confronto la parola iniziale con il suo contrario
+if (UserWord === ReversedWord) {
+  document.getElementById('palindromi').innerHTML = "La parola è un palindromo"; // Fornisco l'esito del confronto positivo
 
-
-// Fornisco l'esito del confronto
+} else {
+  document.getElementById('palindromi').innerHTML = "La parola NON è un palindromo" // Fornisco l'esito del confronto negativo
+}
